@@ -236,9 +236,11 @@ header {
   color: var(--ff-purple);
   padding: 8px 16px;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
-  display: inline-block;
+  display: flex;
+  justify-self: center;
+  gap: 5px;
   margin-bottom: 20px;
 }
 
@@ -298,6 +300,7 @@ header {
   background: var(--border);
   cursor: pointer;
   transition: var(--transition);
+  border: none;
 }
 
 .rotation-dot.active {
@@ -596,5 +599,5 @@ footer {
 .features_icon{
   display: flex;
   align-self: center;
-  font-size: 20px;
+  /* font-size: 10px; */
 }

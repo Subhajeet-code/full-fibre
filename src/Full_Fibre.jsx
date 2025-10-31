@@ -320,7 +320,7 @@ const HeroOfferCard = ({ offer, featured = false }) => {
         </div>
         {offer.promo ? (
           <div className="hero-offer-promo">
-            <i>
+            <i className="features_icon">
               <FaStarHalfStroke />
             </i>{" "}
             {offer.promo}
