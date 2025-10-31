@@ -127,7 +127,7 @@ const OFFERS = [
       "Smart home ready",
       "18-month contract",
     ],
-    link: "https://www.poptelecom.co.uk/broadband/ultrafibre-1000-with-pop-telecom/FullFibre",
+    link: "https://www.poptelecom.co.uk/broadband/ultrafibre-500-with-pop-telecom/FullFibre",
     badge: null,
     featured: false,
     popular: false,
@@ -294,7 +294,7 @@ const OfferCard = ({ offer, index, inView }) => {
       </ul>
 
       <a className="offer-cta" href={offer.link}>
-        View Full Details
+        Buy Now
       </a>
     </div>
   );
