@@ -470,7 +470,7 @@ header {
 .offer-features li i {
   color: var(--ff-pink);
   margin-right: 10px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .offer-cta {
@@ -592,4 +592,9 @@ footer {
   .offer-card {
     padding: 24px;
   }
+}
+.features_icon{
+  display: flex;
+  align-self: center;
+  font-size: 20px;
 }
