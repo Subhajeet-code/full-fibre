@@ -290,7 +290,7 @@ const OfferCard = ({ offer, index, inView }) => {
       <ul className="offer-features">
         {offer.features.map((f, i) => (
           <li key={i}>
-            <i>
+            <i className="features_icon">
               <MdVerifiedUser />
             </i>
             {f}
@@ -320,7 +320,7 @@ const HeroOfferCard = ({ offer, featured = false }) => {
         </div>
         {offer.promo ? (
           <div className="hero-offer-promo">
-            <i>
+            <i className="features_icon">
               <FaStarHalfStroke />
             </i>{" "}
             {offer.promo}
@@ -330,25 +330,25 @@ const HeroOfferCard = ({ offer, featured = false }) => {
 
       <ul className="hero-offer-highlights">
         <li>
-          <i>
+          <i className="features_icon">
             <AiFillThunderbolt />
           </i>{" "}
           Download: {offer.downloadSpeed}
         </li>
         <li>
-          <i>
+          <i className="features_icon">
             <FaUpload />
           </i>{" "}
           Upload: {offer.uploadSpeed}
         </li>
         <li>
-          <i>
+          <i className="features_icon">
             <RiTimerFlashFill />
           </i>{" "}
           Min guaranteed: {offer.minSpeed}
         </li>
         <li>
-          <i>
+          <i className="features_icon">
             <FaWifi />
           </i>{" "}
           {offer.features[1]}

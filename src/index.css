@@ -236,9 +236,11 @@ header {
   color: var(--ff-purple);
   padding: 8px 16px;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
-  display: inline-block;
+  display: flex;
+  justify-self: center;
+  gap: 5px;
   margin-bottom: 20px;
 }
 
@@ -298,6 +300,7 @@ header {
   background: var(--border);
   cursor: pointer;
   transition: var(--transition);
+  border: none;
 }
 
 .rotation-dot.active {
@@ -470,7 +473,7 @@ header {
 .offer-features li i {
   color: var(--ff-pink);
   margin-right: 10px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .offer-cta {
@@ -592,4 +595,9 @@ footer {
   .offer-card {
     padding: 24px;
   }
+}
+.features_icon{
+  display: flex;
+  align-self: center;
+  /* font-size: 10px; */
 }
