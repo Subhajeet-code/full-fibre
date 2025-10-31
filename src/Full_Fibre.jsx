@@ -134,16 +134,12 @@ const OFFERS = [
   },
 ];
 
-// Helper: compute a reasonable percent fill for speed bar (similar to original logic)
 function computeFillPercent(mbpsString) {
-  // parse digits (assumes values like "1000Mbps" or "80Mbps")
   const numeric = parseInt((mbpsString || "").replace(/\D/g, ""), 10) || 0;
-  // scale for visualization: original script used parseInt/25; keep a friendly scaling
   const percent = Math.min(100, Math.round(numeric / 25));
   return percent;
 }
 
-// Subcomponents
 const Header = () => (
   <header>
     <div className="header-container">
@@ -239,7 +235,6 @@ const Footer = () => (
   </footer>
 );
 
-// Offer card used in grid
 const OfferCard = ({ offer, index, inView }) => {
   const downloadPercent = computeFillPercent(offer.downloadSpeed);
   const uploadPercent = computeFillPercent(offer.uploadSpeed);
@@ -305,7 +300,6 @@ const OfferCard = ({ offer, index, inView }) => {
   );
 };
 
-// Hero single card component
 const HeroOfferCard = ({ offer, featured = false }) => {
   return (
     <div className={`hero-offer-card ${featured ? "featured" : ""}`}>
@@ -363,16 +357,14 @@ const HeroOfferCard = ({ offer, featured = false }) => {
 };
 
 export default function Full_Fibre() {
-  // Hero rotation pairs (same grouping as original)
   const heroPairs = [
-    [OFFERS[0], OFFERS[1]], // 2500 + 1000
-    [OFFERS[1], OFFERS[5]], // 1000 + 500
-    [OFFERS[2], OFFERS[4]], // 150 + 80
+    [OFFERS[0], OFFERS[1]],
+    [OFFERS[1], OFFERS[5]],
+    [OFFERS[2], OFFERS[4]],
   ];
 
   const [currentPairIndex, setCurrentPairIndex] = useState(0);
 
-  // For auto-rotation interval
   useEffect(() => {
     const id = setInterval(() => {
       setCurrentPairIndex((p) => (p + 1) % heroPairs.length);
@@ -380,19 +372,15 @@ export default function Full_Fibre() {
     return () => clearInterval(id);
   }, [heroPairs.length]);
 
-  // Scroll "in view" animations - use refs and IntersectionObserver
   const cardRefs = useRef([]);
-  // inView state per card
   const [inViewStates, setInViewStates] = useState(OFFERS.map(() => false));
 
   useEffect(() => {
-    // Ensure the refs array length matches offers
     cardRefs.current = cardRefs.current.slice(0, OFFERS.length);
 
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver(
         (entries) => {
-          // update inViewStates based on entries
           setInViewStates((prev) => {
             const next = [...prev];
             entries.forEach((entry) => {
@@ -407,7 +395,7 @@ export default function Full_Fibre() {
         {
           root: null,
           rootMargin: "0px",
-          threshold: 0.15, // show when ~15% visible
+          threshold: 0.15,
         }
       );
 
@@ -418,12 +406,10 @@ export default function Full_Fibre() {
       // cleanup
       return () => observer.disconnect();
     } else {
-      // Fallback: mark all visible
       setInViewStates(OFFERS.map(() => true));
     }
   }, []);
 
-  // click handler for indicators
   const handleIndicatorClick = (index) => setCurrentPairIndex(index);
 
   return (
@@ -436,17 +422,38 @@ export default function Full_Fibre() {
             <div className="hero-badge">
               Freedom Fibre • Powered by POP Telecom
             </div>
-            <h1>Lightning-Fast Full Fibre Broadband</h1>
-            <p>
+            {/* <h1>Lightning-Fast Full Fibre Broadband</h1> */}
+            <h1>All Freedom Fibre Plans</h1>
+            {/* <p>
               Experience the UK's fastest and most reliable broadband
               technology. Choose from speeds up to 2500Mbps with no price hikes
               mid-contract.
+            </p> */}
+
+            <p>
+              {" "}
+              Compare all our ultrafast broadband packages and find the perfect
+              fit for your home
             </p>
           </div>
-
+          <div className="offers-grid" id="offersGrid">
+            {OFFERS.map((offer, idx) => (
+              <div
+                key={offer.name}
+                ref={(el) => (cardRefs.current[idx] = el)}
+                data-index={idx}
+              >
+                <OfferCard
+                  offer={offer}
+                  index={idx}
+                  inView={inViewStates[idx]}
+                />
+              </div>
+            ))}
+          </div>
+          {/* 
           <div className="hero-offers-container">
             <div className="hero-offers" aria-live="polite">
-              {/* Render the two hero cards for currentPairIndex */}
               {heroPairs[currentPairIndex].map((offer, i) => (
                 <HeroOfferCard
                   key={offer.name + i}
@@ -473,11 +480,11 @@ export default function Full_Fibre() {
                 />
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
-      <section className="all-offers-section">
+      {/* <section className="all-offers-section">
         <div className="container">
           <div className="section-header">
             <h2>All Freedom Fibre Plans</h2>
@@ -490,7 +497,6 @@ export default function Full_Fibre() {
           <div className="offers-grid" id="offersGrid">
             {OFFERS.map((offer, idx) => (
               <div
-                // wrapper to attach ref & data-index for observer
                 key={offer.name}
                 ref={(el) => (cardRefs.current[idx] = el)}
                 data-index={idx}
@@ -504,7 +510,7 @@ export default function Full_Fibre() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </>
