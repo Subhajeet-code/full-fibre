@@ -16,11 +16,10 @@ const OFFERS = [
     uploadSpeed: "2500Mbps",
     minSpeed: "2000Mbps",
     features: [
-      "Symmetrical speeds",
-      "10+ devices simultaneously",
-      "8K streaming capable",
-      "Perfect for professionals",
-      "24-month contract",
+      "Our fastest broadband yet",
+      "Ideal for large households",
+      "Perfect for gaming,streaming & work",
+      "Handles everything at once",
     ],
     link: "https://www.poptelecom.co.uk/broadband/ultrafibre-2500-with-pop-telecom/FullFibre",
     badge: "FASTEST",
@@ -37,11 +36,10 @@ const OFFERS = [
     uploadSpeed: "1000Mbps",
     minSpeed: "800Mbps",
     features: [
-      "Gigabit speeds",
-      "5-8 devices",
-      "Multiple 4K streams",
-      "Online gaming",
-      "18-month contract",
+      "Download films in seconds",
+      "No lag or buffering anytime",
+      "Everyone online with no slowdowns",
+      "Great for 4K, gaming & video calls",
     ],
     link: "https://www.poptelecom.co.uk/broadband/ultrafibre-1000-with-pop-telecom/FullFibre",
     badge: "MOST POPULAR",
@@ -58,11 +56,10 @@ const OFFERS = [
     uploadSpeed: "150Mbps",
     minSpeed: "100Mbps",
     features: [
-      "Superfast speeds",
-      "3-5 devices",
-      "4K streaming",
-      "Video calls",
-      "12-month contract",
+      "Quick, steady everyday speeds",
+      "Ideal for streaming & calls",
+      "Reliable all day long",
+      "Simple setup with free router",
     ],
     link: "https://www.poptelecom.co.uk/broadband/ultrafibre-150-with-pop-telecom/FullFibre",
     badge: null,
@@ -79,11 +76,10 @@ const OFFERS = [
     uploadSpeed: "115Mbps",
     minSpeed: "80Mbps",
     features: [
-      "Fast speeds",
-      "2-4 devices",
-      "HD streaming",
-      "Work from home",
-      "12-month contract",
+      "Solid speed for home workers",
+      "Smooth calls & HD streaming",
+      "Excellent value & full fibre",
+      "Includes energy-saving router",
     ],
     link: "https://www.poptelecom.co.uk/broadband/ultrafibre-115-with-pop-telecom/FullFibre",
     badge: null,
@@ -100,11 +96,10 @@ const OFFERS = [
     uploadSpeed: "80Mbps",
     minSpeed: "60Mbps",
     features: [
-      "Essential speeds",
-      "1-3 devices",
-      "HD streaming",
-      "Email & browsing",
-      "12-month contract",
+      "Upgrade from standard broadband",
+      "Watch & call with no dropouts",
+      "Perfect for small households",
+      "Easy upgrade when you need more speed",
     ],
     link: "https://www.poptelecom.co.uk/broadband/ultrafibre-80-with-pop-telecom/FullFibre",
     badge: "BEST VALUE",
@@ -121,11 +116,10 @@ const OFFERS = [
     uploadSpeed: "500Mbps",
     minSpeed: "400Mbps",
     features: [
-      "Ultrafast speeds",
-      "4-6 devices",
-      "Multiple streams",
-      "Smart home ready",
-      "18-month contract",
+      "Fast, reliable & great for families",
+      "Stream, game & browse together",
+      "No buffering on movies or music",
+      "Superb value for busy homes",
     ],
     link: "https://www.poptelecom.co.uk/broadband/ultrafibre-500-with-pop-telecom/FullFibre",
     badge: null,
@@ -235,18 +229,23 @@ const Footer = () => (
   </footer>
 );
 
-const OfferCard = ({ offer, index, inView }) => {
+const OfferCard = ({ offer, index, inView, activeCard, setActiveCard }) => {
   const downloadPercent = computeFillPercent(offer.downloadSpeed);
   const uploadPercent = computeFillPercent(offer.uploadSpeed);
 
   return (
     <div
-      className={`offer-card ${offer.popular ? "popular" : ""} ${
-        inView ? "in-view" : ""
-      }`}
+      className={`offer-card
+        ${activeCard === index ? "popular" : ""}
+        ${inView ? "in-view" : ""}`}
       style={{ transitionDelay: `${index * 0.1}s` }}
+      onClick={() => {
+        setActiveCard(activeCard === index ? null : index);
+      }}
     >
-      {offer.badge ? <div className="offer-badge">{offer.badge}</div> : null}
+      <div className={offer.badge ? "offer-badge" : "offer-badge empty"}>
+        {offer.badge || ""}
+      </div>
       <div className="offer-name">{offer.name}</div>
       <div className="offer-speed">Average {offer.speed}</div>
       <div className="offer-price">
@@ -411,7 +410,7 @@ export default function Full_Fibre() {
   }, []);
 
   const handleIndicatorClick = (index) => setCurrentPairIndex(index);
-
+  const [activeCard, setActiveCard] = useState(null);
   return (
     <>
       <Header />
@@ -447,6 +446,8 @@ export default function Full_Fibre() {
                   offer={offer}
                   index={idx}
                   inView={inViewStates[idx]}
+                  activeCard={activeCard}
+                  setActiveCard={setActiveCard}
                 />
               </div>
             ))}

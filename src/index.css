@@ -3,32 +3,32 @@
   --primary: #ec157a;
   --primary-dark: #c41264;
   --secondary: #6a11cb;
-
+ 
   /* Freedom Fiber Soft Purple/Violet */
   --ff-purple: #7a2cf0;
   --ff-purple-light: #9a6bff;
   --ff-purple-pale: #efe8ff;
   --ff-pink: #d946ef;
-
+ 
   /* Neutrals */
   --ink: #1f2430;
   --soft-white: #f8f9fa;
   --light-bg: #f5f7ff;
   --border: #e5e7eb;
   --muted: #6b7280;
-
+ 
   /* Design tokens */
   --border-radius: 16px;
   --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
 }
-
+ 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+ 
 body {
   font-family: "Poppins", "Segoe UI", sans-serif;
   background: #fff;
@@ -36,14 +36,14 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-
+ 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
-
+ 
 /* ========== HEADER ========== */
 header {
   position: sticky;
@@ -53,7 +53,7 @@ header {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
 }
-
+ 
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -62,7 +62,7 @@ header {
   max-width: 1400px;
   margin: 0 auto;
 }
-
+ 
 .logo {
   height: 50px;
   font-size: 28px;
@@ -72,13 +72,13 @@ header {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
+ 
 .nav-links {
   display: flex;
   gap: 30px;
   align-items: center;
 }
-
+ 
 .nav-links a {
   text-decoration: none;
   color: var(--ink);
@@ -86,11 +86,11 @@ header {
   transition: var(--transition);
   font-size: 15px;
 }
-
+ 
 .nav-links a:hover {
   color: var(--primary);
 }
-
+ 
 .header-cta {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
@@ -101,23 +101,23 @@ header {
   transition: var(--transition);
   font-size: 14px;
 }
-
+ 
 .header-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(236, 21, 122, 0.4);
 }
-
+ 
 /* ========== HERO SECTION ========== */
 .hero-section {
   background: linear-gradient(135deg, #f5f7ff 0%, #efe8ff 100%);
   padding: 60px 0 40px;
 }
-
+ 
 .hero-intro {
   text-align: center;
   margin-bottom: 50px;
 }
-
+ 
 .hero-badge {
   display: inline-block;
   background: linear-gradient(135deg, var(--ff-purple), var(--ff-pink));
@@ -130,7 +130,7 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-
+ 
 .hero-intro h1 {
   font-size: 3rem;
   font-weight: 800;
@@ -140,20 +140,20 @@ header {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
+ 
 .hero-intro p {
   font-size: 1.2rem;
   color: var(--muted);
   max-width: 700px;
   margin: 0 auto;
 }
-
+ 
 /* ========== ROTATING HERO OFFERS ========== */
 .hero-offers-container {
   position: relative;
   margin-bottom: 80px;
 }
-
+ 
 .hero-offers {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -161,7 +161,7 @@ header {
   max-width: 1100px;
   margin: 0 auto;
 }
-
+ 
 .hero-offer-card {
   background: white;
   border-radius: 24px;
@@ -173,17 +173,17 @@ header {
   opacity: 1;
   transform: translateY(0);
 }
-
+ 
 .hero-offer-card.fade-out {
   opacity: 0;
   transform: translateY(20px);
 }
-
+ 
 .hero-offer-card.featured {
   border: 3px solid var(--ff-purple);
   background: linear-gradient(145deg, white, var(--ff-purple-pale));
 }
-
+ 
 .featured-badge {
   position: absolute;
   top: -14px;
@@ -198,39 +198,39 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-
+ 
 .hero-offer-header {
   text-align: center;
   margin-bottom: 24px;
 }
-
+ 
 .hero-offer-name {
   font-size: 2rem;
   font-weight: 800;
   color: var(--ink);
   margin-bottom: 8px;
 }
-
+ 
 .hero-offer-speed {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--ff-purple);
   margin-bottom: 16px;
 }
-
+ 
 .hero-offer-price {
   font-size: 2.5rem;
   font-weight: 800;
   color: var(--ff-purple);
   margin-bottom: 8px;
 }
-
+ 
 .hero-offer-price small {
   font-size: 1rem;
   font-weight: 400;
   color: var(--muted);
 }
-
+ 
 .hero-offer-promo {
   background: var(--ff-purple-pale);
   color: var(--ff-purple);
@@ -243,12 +243,12 @@ header {
   gap: 5px;
   margin-bottom: 20px;
 }
-
+ 
 .hero-offer-highlights {
   list-style: none;
   margin: 24px 0;
 }
-
+ 
 .hero-offer-highlights li {
   padding: 12px 0;
   display: flex;
@@ -257,13 +257,13 @@ header {
   color: var(--ink);
   font-weight: 500;
 }
-
+ 
 .hero-offer-highlights li i {
   color: var(--ff-purple);
   margin-right: 12px;
   font-size: 18px;
 }
-
+ 
 .hero-cta {
   width: 100%;
   padding: 16px 32px;
@@ -279,12 +279,12 @@ header {
   display: inline-block;
   text-align: center;
 }
-
+ 
 .hero-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(122, 44, 240, 0.3);
 }
-
+ 
 /* Rotation indicators */
 .rotation-indicators {
   display: flex;
@@ -292,7 +292,7 @@ header {
   gap: 8px;
   margin-top: 30px;
 }
-
+ 
 .rotation-dot {
   width: 10px;
   height: 10px;
@@ -302,36 +302,36 @@ header {
   transition: var(--transition);
   border: none;
 }
-
+ 
 .rotation-dot.active {
   background: var(--ff-purple);
   width: 30px;
   border-radius: 5px;
 }
-
+ 
 /* ========== ALL OFFERS GRID ========== */
 .all-offers-section {
   padding: 60px 0 80px;
   background: white;
 }
-
+ 
 .section-header {
   text-align: center;
   margin-bottom: 50px;
 }
-
+ 
 .section-header h2 {
   font-size: 2.5rem;
   font-weight: 800;
   color: var(--ink);
   margin-bottom: 12px;
 }
-
+ 
 .section-header p {
   font-size: 1.1rem;
   color: var(--muted);
 }
-
+ 
 .offers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -339,7 +339,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
 }
-
+ 
 .offer-card {
   background: white;
   border-radius: var(--border-radius);
@@ -349,24 +349,24 @@ header {
   opacity: 0;
   transform: translateY(30px);
 }
-
+ 
 .offer-card.in-view {
   opacity: 1;
   transform: translateY(0);
 }
-
+ 
 .offer-card:hover {
   border-color: var(--ff-purple);
   transform: translateY(-4px);
   box-shadow: 0 12px 30px rgba(122, 44, 240, 0.15);
 }
-
+ 
 .offer-card.popular {
   border-color: var(--ff-purple);
   border-width: 3px;
   background: linear-gradient(145deg, white, var(--ff-purple-pale));
 }
-
+ 
 .offer-badge {
   background: var(--ff-purple);
   color: white;
@@ -379,42 +379,42 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-
+ 
 .offer-name {
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--ink);
   margin-bottom: 8px;
 }
-
+ 
 .offer-speed {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--ff-purple);
   margin-bottom: 16px;
 }
-
+ 
 .offer-price {
   font-size: 2rem;
   font-weight: 800;
   color: var(--ff-purple);
   margin-bottom: 20px;
 }
-
+ 
 .offer-price small {
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--muted);
 }
-
+ 
 .speed-bars {
   margin: 20px 0;
 }
-
+ 
 .speed-item {
   margin-bottom: 16px;
 }
-
+ 
 .speed-label {
   display: flex;
   justify-content: space-between;
@@ -422,12 +422,12 @@ header {
   color: var(--muted);
   margin-bottom: 6px;
 }
-
+ 
 .speed-value {
   font-weight: 700;
   color: var(--ink);
 }
-
+ 
 .speed-bar {
   height: 6px;
   background: var(--ff-purple-pale);
@@ -435,7 +435,7 @@ header {
   overflow: hidden;
   position: relative;
 }
-
+ 
 .speed-fill {
   position: absolute;
   height: 100%;
@@ -445,23 +445,47 @@ header {
     var(--ff-purple)
   );
   border-radius: 3px;
-  width: 0;
+  width: var(--fill-width, 0%); /* <-- important */
   transition: width 1.2s ease-out;
 }
-
+ 
 .offer-card.in-view .speed-fill {
-  width: 25%;
+ width: var(--fill-width, 0%);
 }
-
+ 
 .offer-card:hover .speed-fill {
   width: var(--fill-width);
 }
-
+/* progress bar base */
+.speed-fill {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--ff-purple-light),
+    var(--ff-purple)
+  );
+  border-radius: 3px;
+  width: 0; /* initial width */
+  transition: width 1.2s ease-out;
+}
+ 
+/* when card becomes visible (scroll into view) */
+.offer-card.in-view .speed-fill {
+  width: var(--fill-width, 0%);
+}
+ 
+/* when hovered, force animation to full width */
+.offer-card:hover .speed-fill {
+  width: var(--fill-width, 0%) !important;
+}
+ 
+ 
 .offer-features {
   list-style: none;
   margin: 20px 0;
 }
-
+ 
 .offer-features li {
   padding: 8px 0;
   display: flex;
@@ -469,13 +493,13 @@ header {
   font-size: 14px;
   color: var(--ink);
 }
-
+ 
 .offer-features li i {
   color: var(--ff-pink);
   margin-right: 10px;
   font-size: 18px;
 }
-
+ 
 .offer-cta {
   width: 100%;
   padding: 14px 24px;
@@ -491,51 +515,51 @@ header {
   display: inline-block;
   text-align: center;
 }
-
+ 
 .offer-cta:hover {
   background: var(--ff-purple);
   color: white;
 }
-
+ 
 /* ========== FOOTER ========== */
 footer {
   background: #0b1020;
   color: #fff;
   padding: 60px 0 30px;
 }
-
+ 
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
   margin-bottom: 40px;
 }
-
+ 
 .footer-column h3 {
   color: white;
   margin-bottom: 20px;
   font-size: 1.1rem;
 }
-
+ 
 .footer-links {
   list-style: none;
 }
-
+ 
 .footer-links li {
   margin-bottom: 12px;
 }
-
+ 
 .footer-links a {
   color: #9ca3af;
   text-decoration: none;
   transition: var(--transition);
   font-size: 14px;
 }
-
+ 
 .footer-links a:hover {
   color: var(--primary);
 }
-
+ 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 30px;
@@ -543,55 +567,55 @@ footer {
   color: #9ca3af;
   font-size: 13px;
 }
-
+ 
 .footer-bottom p {
   margin-bottom: 8px;
 }
-
+ 
 .footer-bottom a {
   color: #9ca3af;
   text-decoration: none;
 }
-
+ 
 .footer-bottom a:hover {
   color: var(--primary);
 }
-
+ 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 992px) {
   .hero-offers {
     grid-template-columns: 1fr;
     max-width: 600px;
   }
-
+ 
   .hero-intro h1 {
     font-size: 2.2rem;
   }
-
+ 
   .nav-links {
     display: none;
   }
-
+ 
   .offers-grid {
     grid-template-columns: 1fr;
     max-width: 500px;
     margin: 0 auto;
   }
 }
-
+ 
 @media (max-width: 768px) {
   .hero-intro h1 {
     font-size: 1.8rem;
   }
-
+ 
   .section-header h2 {
     font-size: 1.8rem;
   }
-
+ 
   .hero-offer-card {
     padding: 30px;
   }
-
+ 
   .offer-card {
     padding: 24px;
   }
@@ -600,4 +624,8 @@ footer {
   display: flex;
   align-self: center;
   /* font-size: 10px; */
+}
+.offer-badge.empty {
+  background: transparent !important;
+  padding: 5px 12px; /* keep height same */
 }
